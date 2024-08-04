@@ -17,7 +17,7 @@ in {
       niri = {
         enable = mkEnabled;
         monitor = lib.mkOption {
-          type = lib.types.enum ["odyssey"];
+          type = lib.types.enum ["odyssey" "mac-book-pro"];
           default = null;
         };
 

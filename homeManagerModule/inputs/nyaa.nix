@@ -9,7 +9,7 @@ in {
     input = {
       # Flags
       warp-mouse-to-focus = true;
-      focus-follows-mouse = true;
+      #focus-follows-mouse = true;
 
       # If you jump to the workspace you're currently viewing, it will take you to previous workspace
       workspace-auto-back-and-forth = true;

@@ -1,10 +1,11 @@
 {
   inputs = {
     niri.url = "github:sodiboo/niri-flake";
-    #niri.url = "github:xvrqt/niri-flake";
   };
 
-  outputs = {niri, ...}: {
+  outputs = {niri, ...}: let
+  	machines = [ "nyaa" "spark" ];
+  in {
     nixosModules = {
       default = {pkgs, ...}: {
         imports = [
@@ -20,7 +21,9 @@
     };
 
     homeManagerModules = {
-      default = {
+      spark = let
+      		machine = "spark";
+	in {
         lib,
         pkgs,
         config,
@@ -35,6 +38,7 @@
             inherit niri;
             inherit pkgs;
             inherit config;
+	    inherit machine;
           })
         ];
       };
