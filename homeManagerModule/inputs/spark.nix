@@ -5,30 +5,19 @@
 }: let
   cfgCheck = config.desktops.niri.enable;
 in {
-  programs.niri.settings = lib.mkIf cfgCheck {
-    input = {
-      # Flags
-      warp-mouse-to-focus = true;
-      #focus-follows-mouse = true;
+  imports = [
+    ./common.nix
+  ];
 
-      # If you jump to the workspace you're currently viewing, it will take you to previous workspace
-      workspace-auto-back-and-forth = true;
-
-      keyboard = {
-        xkb = {
-          layout = "us";
-          # Remap Caps-Lock to ESC
-          options = "caps:escape";
-        };
+  programs.niri.settings.input = lib.mkIf cfgCheck {
+      # Add touchpad configuration for the laptop
+      touchpad = {
+	# Tap-to-click
+      	tap = true;
+	# Disable while typing
+	dwt = true;
+	left-handed = true;
+	scroll-method = "two-finger";
       };
-
-      mouse = {
-        accel-speed = 0.2;
-        accel-profile = "flat";
-        scroll-method = "no-scroll";
-      };
-
-      touchpad = {};
-    };
   };
 }

@@ -20,7 +20,7 @@
 
   config = {
     programs.niri = {
-    	enable = true;
+    	# enable = true;
 
      settings = {
         # No client-side decorations
