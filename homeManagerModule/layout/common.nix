@@ -18,7 +18,6 @@ in {
         {proportion = 5.0 / 6.0;}
       ];
 
-      default-column-width = {proportion = 1.0 / 4.0;};
       focus-ring.enable = false;
       border = {
         enable = true;
