@@ -6,6 +6,8 @@
   imports = [
     #  Defines options for home-manager users
     ./options.nix
+    # Programs to launch at startup
+    ./startup/${machine}.nix
     # Keybindings and Shortcuts
     ./binds/${machine}.nix
     # How to handle keyboard, mouse, and trackpad events

@@ -1,9 +1,14 @@
 {
   inputs = {
     niri.url = "github:sodiboo/niri-flake";
+    swww.url = "github:LGFae/swww";
   };
 
-  outputs = {niri, ...}: let
+  outputs = {
+    niri,
+    swww,
+    ...
+  }: let
     machines = ["nyaa" "spark"];
   in {
     nixosModules = {
@@ -13,8 +18,7 @@
           niri.nixosModules.niri
           # Include our NixOS Module which enables and configures Niri
           (import ./nixosModule.nix {
-            inherit pkgs;
-            inherit niri;
+            inherit pkgs niri swww;
           })
         ];
       };
