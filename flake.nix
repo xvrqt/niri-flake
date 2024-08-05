@@ -4,7 +4,7 @@
   };
 
   outputs = {niri, ...}: let
-  	machines = [ "nyaa" "spark" ];
+    machines = ["nyaa" "spark"];
   in {
     nixosModules = {
       default = {pkgs, ...}: {
@@ -20,28 +20,25 @@
       };
     };
 
-    homeManagerModules = {
-      spark = let
-      		machine = "spark";
-	in {
-        lib,
-        pkgs,
-        config,
-        ...
-      }: {
-        imports = [
-          # Re-import the original Home Manager Module from the Niri Flake
-          niri.homeModules.niri
-          # Include our Home Manager Module which enables and configures Niri
-          (import ./homeManagerModule {
-            inherit lib;
-            inherit niri;
-            inherit pkgs;
-            inherit config;
-	    inherit machine;
-          })
-        ];
-      };
-    };
+    # Home Manager Module is required to declaratively configure Niri
+    # (using the Sodiboo Flake, that is)
+    # We pass in the machine name to retrieve the correct configuration
+    homeManagerModules = builtins.listToAttrs (builtins.map (machine: {
+        name = machine;
+        value = {
+          lib,
+          pkgs,
+          config,
+          ...
+        }: {
+          imports = [
+            # Re-import the original Home Manager Module from the Niri Flake
+            niri.homeModules.niri
+            # Include our Home Manager Module which enables and configures Niri
+            (import ./homeManagerModule {inherit lib niri pkgs config machine;})
+          ];
+        };
+      })
+      machines);
   };
 }

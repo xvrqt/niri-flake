@@ -6,9 +6,7 @@
   cfgCheck = config.desktops.niri.enable;
 in {
   programs.niri.settings = lib.mkIf cfgCheck {
-    binds = with config.lib.niri.actions; let
-      sh = spawn "sh" "-c";
-    in {
+    binds = with config.lib.niri.actions; {
       # Window Controls
       "Mod+Q".action.close-window = [];
 

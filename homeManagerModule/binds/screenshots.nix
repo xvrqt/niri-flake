@@ -6,9 +6,7 @@
   cfgCheck = config.desktops.niri.enable;
 in {
   programs.niri.settings = lib.mkIf cfgCheck {
-    binds = with config.lib.niri.actions; let
-      sh = spawn "sh" "-c";
-    in {
+    binds = with config.lib.niri.actions; {
       # Screenshots
       "Alt+Shift+1".action = screenshot;
       "Alt+Shift+2".action = screenshot-window;

@@ -1,4 +1,3 @@
-
 {
   lib,
   config,
@@ -11,9 +10,9 @@ in {
       # Flags
       warp-mouse-to-focus = true;
       focus-follows-mouse = {
-      	enable = true;
-# Won't build despite conforming to the docs :s
-#	max-scroll-amount = "0%";
+        enable = true;
+        # Won't build despite conforming to the docs :s
+        #	max-scroll-amount = "0%";
       };
 
       # If you jump to the workspace you're currently viewing, it will take you to previous workspace

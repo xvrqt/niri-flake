@@ -19,7 +19,7 @@ in {
       "Mod+Shift+Slash".action = show-hotkey-overlay;
       # Power Off Monitors
       "Mod+Shift+P".action = power-off-monitors;
-      "Mod+E".action = quit { skip-confirmation = true; };
+      "Mod+E".action = quit {skip-confirmation = true;};
     };
   };
 }

@@ -1,7 +1,7 @@
 {
   programs.niri.settings = {
     debug = {
-      render-drm-device = "/dev/dri/renderD128";
+      wait-for-frame-completion-before-queueing = [];
     };
   };
 }

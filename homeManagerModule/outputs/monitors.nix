@@ -18,7 +18,7 @@
     };
   };
 
-  # Mac Book Pro Screen 
+  # Mac Book Pro Screen
   mac-book-pro = {
     mode = {
       width = 3024;
