@@ -36,10 +36,8 @@
           ...
         }: {
           imports = [
-            # Re-import the original Home Manager Module from the Niri Flake
-            niri.homeModules.niri
             # Include our Home Manager Module which enables and configures Niri
-            (import ./homeManagerModule {inherit lib niri pkgs config machine;})
+            (import ./homeManagerModule {inherit lib niri pkgs swww config machine;})
           ];
         };
       })

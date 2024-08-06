@@ -3,6 +3,7 @@
   machine,
   ...
 }: {
+  # Imports settings based on the machine it is running on
   imports = [
     #  Defines options for home-manager users
     ./options.nix
@@ -25,6 +26,7 @@
   ];
 
   config = {
+    # Configure Niri (machine agnostic);
     programs.niri = {
       settings = {
         # No client-side decorations
