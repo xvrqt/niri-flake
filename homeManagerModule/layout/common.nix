@@ -26,6 +26,7 @@ in {
           from = "#EF7627";
           to = "#D162A4";
           angle = 45;
+          in' = "oklch longer hue";
         };
         inactive.gradient = {
           from = "#B55690";
