@@ -30,7 +30,7 @@ in {
         inactive.gradient = {
           from = "#B55690";
           to = "#D52D00";
-          angle = 225;
+          angle = 45;
         };
       };
     };

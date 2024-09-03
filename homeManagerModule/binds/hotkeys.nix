@@ -11,8 +11,9 @@ in {
     in {
       # Shortcuts
       # Open a Terminal
-      "Mod+T".action.spawn = "alacritty";
-      "Mod+W".action.spawn = "librewolf";
+      "Mod+T".action = spawn "alacritty";
+      "Mod+X".action = spawn "kitty";
+      "Mod+W".action = spawn "librewolf";
       # Open Rofi Application Launcher
       "Mod+Return".action = sh "rofi -show drun";
       # Show Hotkey Cheat Sheet
