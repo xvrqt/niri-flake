@@ -3,7 +3,7 @@
   config,
   ...
 }: let
-  terminal = config.terminal.emulator || "alacritty";
+  terminal = config.terminal.emulator;
   cfgCheck = config.desktops.niri.enable;
 in {
   programs.niri.settings = lib.mkIf cfgCheck {
