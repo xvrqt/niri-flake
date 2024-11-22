@@ -3,7 +3,8 @@
   config,
   ...
 }: let
-  terminal = config.terminal.emulator;
+  # Use the default terminal
+  terminal = config.terminal.emulator or "kitty";
   cfgCheck = config.desktops.niri.enable;
 in {
   programs.niri.settings = lib.mkIf cfgCheck {
@@ -13,7 +14,6 @@ in {
       # Shortcuts
       # Open a Terminal
       "Mod+T".action = spawn terminal;
-      "Mod+X".action = spawn "kitty";
       "Mod+W".action = spawn "librewolf";
       # Open Rofi Application Launcher
       "Mod+Return".action = sh "rofi -show drun";
