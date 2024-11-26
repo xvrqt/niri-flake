@@ -14,7 +14,7 @@
     # How to handle keyboard, mouse, and trackpad events
     ./inputs/${machine}.nix
     # Monitors and their configurations
-    ./outputs/${machine}.nix
+    ./outputs
     # How to decorate and display the windows
     ./layout/${machine}.nix
     # Window Rules
