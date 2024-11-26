@@ -17,17 +17,12 @@
     monitors = import ./monitors.nix;
     # You need this regardless if you use the Home Manager Module
     nixosModules = {
-      default = {
-        lib,
-        pkgs,
-        config,
-        ...
-      }: {
+      default = {pkgs, ...}: {
         imports = [
           # Re-import the original NixOS module from the Niri Flake
           niri.nixosModules.niri
           # Import the wallpaper manager NixOS Modules
-          # shaderbg.nixosModules.${pkgs.systems}.default
+          shaderbg.nixosModules.${pkgs.systems}.default
           # Include our NixOS Module which enables and configures Niri
           (import ./nixosModule.nix {
             inherit pkgs niri swww;
@@ -51,15 +46,15 @@
             # Import the options that help define the desktop experience
             ./options.nix
             # Add in the ancillary packages
-            {
-              home.packages = lib.mkIf (config.desktops.wallpaper
-                == "shaderbg") [
-                shaderbg.inputs.shaderbg.packages.${pkgs.system}.default
-                shaderbg.packages.${pkgs.system}.initWallpaper
-                shaderbg.packages.${pkgs.system}.changeWallpaper
-                shaderbg.packages.${pkgs.system}.exitWallpaper
-              ];
-            }
+            # {
+            #   home.packages = lib.mkIf (config.desktops.wallpaper
+            #     == "shaderbg") [
+            #     shaderbg.inputs.shaderbg.packages.${pkgs.system}.default
+            #     shaderbg.packages.${pkgs.system}.initWallpaper
+            #     shaderbg.packages.${pkgs.system}.changeWallpaper
+            #     shaderbg.packages.${pkgs.system}.exitWallpaper
+            #   ];
+            # }
             # Include our Home Manager Module which enables and configures Niri
             (import ./homeManagerModule {inherit lib niri pkgs shaderbg swww config machine;})
           ];
