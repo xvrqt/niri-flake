@@ -3,7 +3,7 @@
   config,
   ...
 }: let
-  cfgCheck = config.desktops.niri.enable;
+  cfgCheck = config.desktops.window-manager == "niri";
   window_close = ./shaders/window_close.frag;
 in {
   programs.niri.settings = lib.mkIf cfgCheck {

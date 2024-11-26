@@ -3,7 +3,7 @@
   config,
   ...
 }: let
-  cfgCheck = config.desktops.niri.enable;
+  cfgCheck = config.desktops.window-manager == "niri";
 in {
   programs.niri.settings = lib.mkIf cfgCheck {
     # Use the default animations
