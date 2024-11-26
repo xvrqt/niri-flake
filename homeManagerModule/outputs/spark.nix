@@ -11,10 +11,9 @@ in {
     lib.mkIf cfgCheck # Only make if Niri is enabled
     
     (builtins.listToAttrs
-      (builtins.map (output:
-        {
+      (builtins.map (output: {
           name = output.output;
           value = outputToNiriSubModule output;
-        }
-        config.desktops.outputs)));
+        })
+        config.desktops.outputs));
 }
