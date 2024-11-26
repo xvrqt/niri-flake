@@ -3,6 +3,7 @@
   pkgs,
   config,
   inputs,
+  ...
 }: let
   wp_manager = config.desktops.wallpaper;
   cfgCheck = name: name == wp_manager;
