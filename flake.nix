@@ -21,8 +21,6 @@
         imports = [
           # Re-import the original NixOS module from the Niri Flake
           niri.nixosModules.niri
-          # Import the options that help define the desktop experience
-          ./options.nix
           # Include our NixOS Module which enables and configures Niri
           (import ./nixosModule.nix {
             inherit pkgs niri swww;
@@ -43,6 +41,8 @@
           ...
         }: {
           imports = [
+            # Import the options that help define the desktop experience
+            ./options.nix
             # Include our Home Manager Module which enables and configures Niri
             (import ./homeManagerModule {inherit lib niri pkgs shaderbg swww config machine;})
           ];
