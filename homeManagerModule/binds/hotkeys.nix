@@ -5,7 +5,7 @@
 }: let
   # Use the default terminal
   terminal = config.terminal.emulator or "kitty";
-  cfgCheck = config.desktops.niri.enable;
+  cfgCheck = config.desktops.window-manager == "niri";
 in {
   programs.niri.settings = lib.mkIf cfgCheck {
     binds = with config.lib.niri.actions; let
