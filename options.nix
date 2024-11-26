@@ -28,7 +28,7 @@ in {
 
       # Set Output(s)
       outputs = lib.mkOption {
-        type = lib.types.listOf lib.types.submodule;
+        type = lib.types.listOf lib.types.attrs;
         default = [monitors.mac-book-pro];
       };
 
