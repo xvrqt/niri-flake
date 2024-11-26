@@ -1,6 +1,8 @@
 {
   # Large Curved Monitor
   odyssey = {
+    # Probably wrong
+    output = "HDMI-5";
     mode = {
       width = 7680;
       height = 2160;
@@ -35,5 +37,6 @@
       flipped = false;
       rotation = 0;
     };
+    output = "eDP-1";
   };
 }
