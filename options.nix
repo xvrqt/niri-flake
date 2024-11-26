@@ -8,6 +8,18 @@
 in {
   options = {
     desktops = {
+      # Set Output(s)
+      outputs = lib.mkOption {
+        type = lib.types.listOf lib.types.attrs;
+        default = [monitors.mac-book-pro];
+      };
+
+      # Select a Wallpaper Manager
+      wallpaper = lib.mkOption {
+        type = lib.types.enum ["swww" "shaderbg"];
+        default = "shaderbg";
+      };
+
       # Select a Window Manager
       window-manager = lib.mkOption {
         type = lib.types.enum ["niri"];
@@ -18,30 +30,6 @@ in {
       screenshot-path = lib.mkOption {
         type = lib.types.path;
         default = ./. + "~/Pictures/Screenshots/scrot_%Y-%m-%d-%H-%M-%S.png";
-      };
-
-      # Select a Wallpaper Manager
-      wallpaper = lib.mkOption {
-        type = lib.types.enum ["swww" "shaderbg"];
-        default = "shaderbg";
-      };
-
-      # Set Output(s)
-      outputs = lib.mkOption {
-        type = lib.types.listOf lib.types.attrs;
-        default = [monitors.mac-book-pro];
-      };
-
-      niri = {
-        enable = mkEnabled;
-        monitor = lib.mkOption {
-          type = lib.types.enum ["odyssey" "mac-book-pro"];
-          default = null;
-        };
-
-        animations = {
-          window-close.enable = mkEnabled;
-        };
       };
     };
   };
