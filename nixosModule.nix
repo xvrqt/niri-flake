@@ -1,7 +1,6 @@
 {
   pkgs,
   niri,
-  swww,
   ...
 }: {
   # Overlay Niri so that anything else that uses it as a dependency will use the correct version
@@ -19,7 +18,6 @@
 
   # Useful packages to include with a Desktop Environment
   environment.systemPackages = [
-    swww.packages.${pkgs.system}.swww
     pkgs.waypaper
 
     pkgs.cage
