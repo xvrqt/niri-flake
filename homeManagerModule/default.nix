@@ -8,7 +8,7 @@
     # Programs to launch at startup
     ./startup/${machine}.nix
     # Keybindings and Shortcuts
-    ./binds/${machine}.nix
+    ./binds
     # How to handle keyboard, mouse, and trackpad events
     ./inputs/${machine}.nix
     # Monitors and their configurations
@@ -16,7 +16,7 @@
     # How to decorate and display the windows
     ./layout/${machine}.nix
     # Window Rules
-    ./windows/${machine}.nix
+    ./windows
     # Custom window animations and shaders
     ./animations/${machine}.nix
     # Debug flags, experimental settings
