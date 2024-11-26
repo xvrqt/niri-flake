@@ -11,6 +11,6 @@ in {
   imports = [
     (lib.mkIf
       (cfgCheck "shaderbg")
-      shaderbg.nixosModule.${pkgs.system}.default)
+      shaderbg.nixosModules.${pkgs.system}.default)
   ];
 }
