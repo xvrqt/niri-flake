@@ -9,5 +9,5 @@
   OUTPUT = builtins.head config.desktops.outputs;
 in {
   #programs.niri.settings.outputs.${OUTPUT} = lib.mkIf cfgCheck monitors.mac-book-pro;
-  programs.niri.settings.outputs.${OUTPUT.output} = OUTPUT;
+  programs.niri.settings.outputs.${OUTPUT.output} = monitors.mac-book-pro;
 }
