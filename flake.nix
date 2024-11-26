@@ -47,7 +47,6 @@
         };
       })
       machines);
-
-    monitors = import ./monitors.nix;
   };
+  monitors = import ./monitors.nix;
 }
