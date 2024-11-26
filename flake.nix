@@ -18,6 +18,7 @@
     # You need this regardless if you use the Home Manager Module
     nixosModules = {
       default = {
+        lib,
         pkgs,
         config,
         ...
@@ -26,7 +27,7 @@
           # Re-import the original NixOS module from the Niri Flake
           niri.nixosModules.niri
           # Import the wallpaper manager NixOS Modules
-          (import ./wallpaper/nixosModule.nix {inherit pkgs config shaderbg;})
+          (import ./wallpaper/nixosModule.nix {inherit lib pkgs config shaderbg;})
           # Include our NixOS Module which enables and configures Niri
           (import ./nixosModule.nix {
             inherit pkgs niri swww;
