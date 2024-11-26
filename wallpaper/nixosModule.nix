@@ -2,7 +2,7 @@
   lib,
   pkgs,
   config,
-  inputs,
+  shaderbg,
   ...
 }: let
   wp_manager = config.desktops.wallpaper;
@@ -11,6 +11,6 @@ in {
   imports = [
     (lib.mkIf
       (cfgCheck "shaderbg")
-      inputs.shaderbg.nixosModule.${pkgs.system}.default)
+      shaderbg.nixosModule.${pkgs.system}.default)
   ];
 }
