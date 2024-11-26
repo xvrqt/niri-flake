@@ -15,13 +15,14 @@ in {
       # Open a Terminal
       "Mod+T".action = spawn terminal;
       "Mod+W".action = spawn "librewolf";
+      # "Mod+B".action =
       # Open Rofi Application Launcher
       "Mod+Return".action = sh "rofi -show drun";
       # Show Hotkey Cheat Sheet
       "Mod+Shift+Slash".action = show-hotkey-overlay;
       # Power Off Monitors
       "Mod+Shift+P".action = power-off-monitors;
-      "Mod+E".action = quit {skip-confirmation = true;};
+      "Mod+Shift-Q".action = quit {skip-confirmation = false;};
     };
   };
 }

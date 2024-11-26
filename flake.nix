@@ -21,6 +21,8 @@
         imports = [
           # Re-import the original NixOS module from the Niri Flake
           niri.nixosModules.niri
+          # Import the wallpaper manager NixOS Modules
+          ./wallpaper/nixosModule.nix
           # Include our NixOS Module which enables and configures Niri
           (import ./nixosModule.nix {
             inherit pkgs niri swww;
