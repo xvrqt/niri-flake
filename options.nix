@@ -8,16 +8,16 @@
 in {
   options = {
     desktops = {
-      # Where to save screenshots
-      screenshot-path = lib.mkOption {
-        type = lib.types.path;
-        default = ./. + "~/Pictures/Screenshots/scrot_%Y-%m-%d-%H-%M-%S.png";
-      };
-
       # Select a Window Manager
       window-manager = lib.mkOption {
         type = lib.types.enum ["niri"];
         default = "niri";
+      };
+
+      # Where to save screenshots
+      screenshot-path = lib.mkOption {
+        type = lib.types.path;
+        default = ./. + "~/Pictures/Screenshots/scrot_%Y-%m-%d-%H-%M-%S.png";
       };
 
       # Select a Wallpaper Manager
