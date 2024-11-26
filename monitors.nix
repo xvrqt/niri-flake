@@ -22,6 +22,7 @@
 
   # Mac Book Pro Screen
   mac-book-pro = {
+    output = "eDP-1";
     mode = {
       width = 3024;
       height = 1890;
@@ -37,6 +38,5 @@
       flipped = false;
       rotation = 0;
     };
-    output = "eDP-1";
   };
 }
