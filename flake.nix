@@ -52,7 +52,7 @@
             ./options.nix
             # Add in the ancillary packages
             {
-              packages = lib.mkIf (config.desktops.wallpaper
+              home.packages = lib.mkIf (config.desktops.wallpaper
                 == "shaderbg") [
                 shaderbg.inputs.shaderbg.packages.${pkgs.system}.default
                 shaderbg.packages.${pkgs.system}.initWallpaper
