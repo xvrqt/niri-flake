@@ -13,6 +13,8 @@
   }: let
     machines = ["nyaa" "spark"];
   in {
+    # My personal monitor collection; as the layout of this is tightly bound, it's nice to have it on hand
+    monitors = import ./monitors.nix;
     # You need this regardless if you use the Home Manager Module
     nixosModules = {
       default = {pkgs, ...}: {
@@ -48,5 +50,4 @@
       })
       machines);
   };
-  monitors = import ./monitors.nix;
 }
