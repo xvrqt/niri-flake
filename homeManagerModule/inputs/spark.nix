@@ -3,7 +3,7 @@
   config,
   ...
 }: let
-  cfgCheck = config.desktops.niri.enable;
+  cfgCheck = config.desktops.window-manager == "niri";
 in {
   imports = [
     ./common.nix
