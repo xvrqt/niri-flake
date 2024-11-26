@@ -6,7 +6,7 @@
   # Imports settings based on the machine it is running on
   imports = [
     #  Defines options for home-manager users
-    ./options.nix
+    #./options.nix
     # Programs to launch at startup
     ./startup/${machine}.nix
     # Keybindings and Shortcuts
