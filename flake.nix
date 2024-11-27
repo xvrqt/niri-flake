@@ -46,15 +46,15 @@
             # Import the options that help define the desktop experience
             ./options.nix
             # Add in the ancillary packages
-            # {
-            #   home.packages = lib.mkIf (config.desktops.wallpaper
-            #     == "shaderbg") [
-            #     shaderbg.inputs.shaderbg.packages.${pkgs.system}.default
-            #     shaderbg.packages.${pkgs.system}.initWallpaper
-            #     shaderbg.packages.${pkgs.system}.changeWallpaper
-            #     shaderbg.packages.${pkgs.system}.exitWallpaper
-            #   ];
-            # }
+            {
+              home.packages = lib.mkIf (config.desktops.wallpaper
+                == "shaderbg") [
+                shaderbg.inputs.shaderbg.packages.${pkgs.system}.default
+                shaderbg.packages.${pkgs.system}.initWallpaper
+                shaderbg.packages.${pkgs.system}.changeWallpaper
+                shaderbg.packages.${pkgs.system}.exitWallpaper
+              ];
+            }
             # Include our Home Manager Module which enables and configures Niri
             (import ./homeManagerModule {inherit lib niri pkgs shaderbg swww config machine;})
           ];
