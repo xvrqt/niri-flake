@@ -46,8 +46,8 @@
       system: let
         # lib = pkgs.lib;
         # pkgs = import nixpkgs {inherit system;};
-      in
-        builtins.listToAttrs (builtins.map (machine: {
+      in {
+        homeManagerModules = builtins.listToAttrs (builtins.map (machine: {
             name = machine;
             value = {
               lib,
@@ -65,7 +65,8 @@
               ];
             };
           })
-          machines)
+          machines);
+      }
     );
   in {
     # My personal monitor collection; as the layout of this is tightly bound, it's nice to have it on hand
