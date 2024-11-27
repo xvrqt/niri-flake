@@ -1,5 +1,6 @@
 {
   lib,
+  system,
   config,
   shaderbg,
   ...
