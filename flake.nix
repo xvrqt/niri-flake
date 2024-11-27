@@ -72,8 +72,6 @@
   in {
     # My personal monitor collection; as the layout of this is tightly bound, it's nice to have it on hand
     monitors = import ./monitors.nix;
-
-    # NixOS Modules Per System
     nixosModules = nixosModulesWrapped.nixosModules;
     homeManagerModules = homeManagerModulesWrapped.homeManagerModules;
   };
