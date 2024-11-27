@@ -22,7 +22,7 @@
           # Re-import the original NixOS module from the Niri Flake
           niri.nixosModules.niri
           # Import the wallpaper manager NixOS Modules
-          #shaderbg.nixosModules.${pkgs.system}.default
+          shaderbg.nixosModules.${pkgs.system}.default
           # Include our NixOS Module which enables and configures Niri
           (import ./nixosModule.nix {
             inherit pkgs niri swww;
