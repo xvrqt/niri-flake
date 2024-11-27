@@ -29,8 +29,6 @@
             imports = [
               # Re-import the original NixOS module from the Niri Flake
               niri.nixosModules.niri
-              # Import the wallpaper manager NixOS Modules
-              (import ./wallpaper/nixosModule.nix {inherit pkgs lib config shaderbg;})
               #shaderbg.nixosModules.${system}.default
               # Include our NixOS Module which enables and configures Niri
               (import ./nixosModule.nix {
@@ -62,6 +60,8 @@
           imports = [
             # Import the options that help define the desktop experience
             ./options.nix
+            # Import the wallpaper manager NixOS Modules
+            (import ./wallpaper/homeManagerModule.nix {inherit pkgs lib config shaderbg;})
             # Add in the ancillary packages
             # {
             #   home.packages = lib.mkIf (config.desktops.wallpaper
