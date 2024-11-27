@@ -19,17 +19,18 @@
     machines = ["nyaa" "spark"];
     nixosModulesWrapped = flake-utils.lib.eachDefaultSystem (
       system: let
+        lib = pkgs.lib;
         pkgs = import nixpkgs {inherit system overlays;};
         overlays = [niri.overlays.niri];
       in {
         # You need this regardless if you use the Home Manager Module
         nixosModules = {
-          default = {
+          default = {config, ...}: {
             imports = [
               # Re-import the original NixOS module from the Niri Flake
               niri.nixosModules.niri
               # Import the wallpaper manager NixOS Modules
-              (import ./wallpaper/nixosModule.nix {inherit shaderbg;})
+              (import ./wallpaper/nixosModule.nix {inherit pkgs lib config shaderbg;})
               #shaderbg.nixosModules.${system}.default
               # Include our NixOS Module which enables and configures Niri
               (import ./nixosModule.nix {
