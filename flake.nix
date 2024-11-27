@@ -17,26 +17,29 @@
     ...
   }: let
     machines = ["nyaa" "spark"];
-    nixosModulesWrapped = flake-utils.lib.eachDefaultSystem (system: let
-      overlays = [niri.overlays.niri];
-      pkgs = import nixpkgs {inherit system overlays;};
-    in {
-      # You need this regardless if you use the Home Manager Module
-      nixosModules = {
-        default = {
-          imports = [
-            # Re-import the original NixOS module from the Niri Flake
-            niri.nixosModules.niri
-            # Import the wallpaper manager NixOS Modules
-            shaderbg.nixosModules.${system}.default
-            # Include our NixOS Module which enables and configures Niri
-            (import ./nixosModule.nix {
-              inherit pkgs niri swww;
-            })
-          ];
+    nixosModulesWrapped = flake-utils.lib.eachDefaultSystem (
+      system: let
+        pkgs = import nixpkgs {inherit system overlays;};
+        overlays = [niri.overlays.niri];
+      in {
+        # You need this regardless if you use the Home Manager Module
+        nixosModules = {
+          default = {
+            imports = [
+              # Re-import the original NixOS module from the Niri Flake
+              niri.nixosModules.niri
+              # Import the wallpaper manager NixOS Modules
+              ./wallpaper/nixosModule.nix
+              #shaderbg.nixosModules.${system}.default
+              # Include our NixOS Module which enables and configures Niri
+              (import ./nixosModule.nix {
+                inherit pkgs niri swww;
+              })
+            ];
+          };
         };
-      };
-    });
+      }
+    );
   in {
     # My personal monitor collection; as the layout of this is tightly bound, it's nice to have it on hand
     monitors = import ./monitors.nix;
