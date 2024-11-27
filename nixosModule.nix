@@ -1,11 +1,4 @@
-{
-  pkgs,
-  niri,
-  ...
-}: {
-  # Overlay Niri so that anything else that uses it as a dependency will use the correct version
-  #  pkgs.overlays = [niri.overlays.niri];
-
+{pkgs, ...}: {
   # Enable Niri
   programs.niri = {
     enable = true;

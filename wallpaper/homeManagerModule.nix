@@ -1,6 +1,5 @@
 {
   lib,
-  pkgs,
   config,
   shaderbg,
   ...
@@ -11,6 +10,6 @@ in {
   imports = [
     (lib.mkIf
       (cfgCheck "shaderbg")
-      shaderbg.homeManagerModules.${pkgs.system}.default)
+      shaderbg.homeManagerModules.default)
   ];
 }
