@@ -202,11 +202,11 @@
         "shaderbg": "shaderbg_2"
       },
       "locked": {
-        "lastModified": 1732665575,
-        "narHash": "sha256-qzwLTahG833dNpSJRhMV+wEeDI8jMCIaJLSiTT0butI=",
+        "lastModified": 1732665836,
+        "narHash": "sha256-cA4lsOtpsuNpzF/QGW9A0F/iTULnu0YhZuIbr7ZUwHM=",
         "ref": "refs/heads/dev",
-        "rev": "703a01e56bf3ce63a710bc98bfa9abeffd0a3d32",
-        "revCount": 14,
+        "rev": "2f3cf3a6d11fb0a186046aeac82a7d6e9b29ca84",
+        "revCount": 15,
         "type": "git",
         "url": "file:///home/xvrqt/Development/shaderbg-flake"
       },
