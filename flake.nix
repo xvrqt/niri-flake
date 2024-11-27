@@ -18,7 +18,8 @@
   }: let
     machines = ["nyaa" "spark"];
     nixosModulesWrapped = flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgs {inherit system;};
+      overlays = [niri.overlays.niri];
+      pkgs = import nixpkgs {inherit system overlays;};
     in {
       # You need this regardless if you use the Home Manager Module
       nixosModules = {
