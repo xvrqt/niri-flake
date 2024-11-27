@@ -15,7 +15,7 @@ in {
       # Open a Terminal
       "Mod+T".action = spawn terminal;
       "Mod+W".action = spawn "librewolf";
-      # "Mod+B".action =
+      "Mod+B".action = spawn "shaderbg_initWallpaper";
       # Open Rofi Application Launcher
       "Mod+Return".action = sh "rofi -show drun";
       # Show Hotkey Cheat Sheet
