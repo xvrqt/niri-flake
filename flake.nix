@@ -51,6 +51,7 @@
             name = machine;
             value = {
               lib,
+              pkgs,
               config,
               ...
             }: {
@@ -58,7 +59,7 @@
                 # Import the options that help define the desktop experience
                 ./options.nix
                 # Import the wallpaper manager NixOS Modules
-                shaderbg.homeManagerModules.${system}.default
+                shaderbg.homeManagerModules.default
                 # (import ./wallpaper/homeManagerModule.nix {inherit pkgs lib config shaderbg;})
                 # # Include our Home Manager Module which enables and configures Niri
                 (import ./homeManagerModule {inherit lib niri shaderbg swww config machine;})
