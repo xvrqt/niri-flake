@@ -81,7 +81,7 @@
                 ###################
                 # Niri #
                 # # Include our Home Manager Module which enables and configures Niri
-                (lib.mkIf (config.desktops.window-manager == "niri") (import ./window-managers/niri/homeManagerModule.nix {inherit lib niri shaderbg config machine;}))
+                (lib.mkIf (config.desktops.window-manager == "niri") (import ./window-managers/niri/homeManagerModule {inherit lib niri shaderbg config machine;}))
               ];
             };
           })
