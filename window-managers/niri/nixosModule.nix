@@ -6,7 +6,7 @@
     package = pkgs.niri-stable;
   };
 
-  # Enable Wayland support in Election based applications (gross!)
+  # Enable Wayland support in Electron based applications (gross!)
   environment.variables.NIXOS_OZONE_WL = "1";
 
   # Useful packages to include with a Desktop Environment

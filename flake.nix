@@ -1,16 +1,21 @@
 {
   inputs = {
+    # Essentials
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
+
+    # Window Manager Flakes
     niri.url = "github:sodiboo/niri-flake";
+
+    # Wallpaper Flakes
     swww.url = "github:LGFae/swww";
     shaderbg.url = "/home/xvrqt/Development/shaderbg-flake";
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
+    # Application Launcher Flakes
   };
 
   outputs = {
     niri,
-    swww,
     nixpkgs,
     shaderbg,
     flake-utils,
@@ -19,20 +24,24 @@
     machines = ["nyaa" "spark"];
     nixosModulesWrapped = flake-utils.lib.eachDefaultSystem (
       system: let
-        lib = pkgs.lib;
         pkgs = import nixpkgs {inherit system overlays;};
         overlays = [niri.overlays.niri];
       in {
         # You need this regardless if you use the Home Manager Module
         nixosModules = {
-          default = {config, ...}: {
+          default = {pkgs, ...}: {
             imports = [
-              # Re-import the original NixOS module from the Niri Flake
+              ###################
+              # Window Managers #
+              ###################
+              # NIRI #
               niri.nixosModules.niri
-              # Include our NixOS Module which enables and configures Niri
-              (import ./nixosModule.nix {
-                inherit pkgs niri swww;
+              (import ./window-managers/niri/nixosModule.nix {
+                inherit pkgs niri;
               })
+              ##############
+              # Wallpapers #
+              ##############
             ];
           };
         };
@@ -44,8 +53,8 @@
     # We pass in the machine name to retrieve the correct configuration
     homeManagerModulesWrapped = flake-utils.lib.eachDefaultSystem (
       system: let
-        # lib = pkgs.lib;
-        # pkgs = import nixpkgs {inherit system;};
+        lib = pkgs.lib;
+        pkgs = import nixpkgs {inherit system;};
       in {
         homeManagerModules = builtins.listToAttrs (builtins.map (machine: {
             name = machine;
@@ -58,11 +67,21 @@
               imports = [
                 # Import the options that help define the desktop experience
                 ./options.nix
+                ##############
+                # Wallpapers #
+                ##############
+                # SHADERBG #
                 # Import the wallpaper manager NixOS Modules
-                shaderbg.homeManagerModules.default
+                (lib.MkIf
+                  (config.desktops.wallpaper == "shaderbg")
+                  shaderbg.homeManagerModules.default)
                 # (import ./wallpaper/homeManagerModule.nix {inherit pkgs lib config shaderbg;})
+                ###################
+                # Window Managers #
+                ###################
+                # Niri #
                 # # Include our Home Manager Module which enables and configures Niri
-                (import ./homeManagerModule {inherit lib niri shaderbg swww config machine;})
+                (lib.mkIf (config.desktops.window-manager == "niri") import ./window-managers/niri/homeManagerModule {inherit lib niri shaderbg config machine;})
               ];
             };
           })
