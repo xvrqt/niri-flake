@@ -72,9 +72,7 @@
                 ##############
                 # SHADERBG #
                 # Import the wallpaper manager NixOS Modules
-                (lib.mkIf
-                  (config.desktops.wallpaper == "shaderbg")
-                  shaderbg.homeManagerModules.default)
+                (lib.mkIf (config.desktops.wallpaper == "shaderbg") shaderbg.homeManagerModules.default)
                 # (import ./wallpaper/homeManagerModule.nix {inherit pkgs lib config shaderbg;})
                 ###################
                 # Window Managers #
