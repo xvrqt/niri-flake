@@ -38,8 +38,14 @@
             imports = [
               # Annoyingly, Niri requires a NixOS Module to work
               niri.nixosModules.niri
-              ./window-managers/nixosModules/default.nix
+              # ./window-managers/nixosModules/default.nix
             ];
+            config = lib.mkIf config.programs.niri.enable {
+              nixpkgs.overlays = [niri.overlays.niri];
+              programs.niri.package = pkgs.niri-stable;
+              # Enable Wayland support in Electron based applications (gross!)
+              environment.variables.NIXOS_OZONE_WL = "1";
+            };
           };
         };
       }
