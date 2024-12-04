@@ -4,7 +4,7 @@
   config,
   ...
 }: {
-  config = lib.mkIf (config.desktops.window-manager == "niri") {
+  config = lib.mkIf (config.desktop.window-manager == "niri") {
     # Enable Niri
     programs.niri = {
       enable = true;
