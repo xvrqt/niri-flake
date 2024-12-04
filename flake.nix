@@ -40,9 +40,9 @@
               ###################
               # NIRI #
               niri.nixosModules.niri
-              (import ./window-managers/niri/nixosModule.nix {
-                inherit lib config pkgs niri;
-              })
+              # (import ./window-managers/niri/nixosModule.nix {
+              #   inherit lib config pkgs niri;
+              # })
               ##############
               # Wallpapers #
               ##############

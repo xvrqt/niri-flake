@@ -1,8 +1,11 @@
 {
+  lib,
   config,
   machine,
   ...
-}: {
+}: let
+  cfgCheck = config.desktops.window-manager == "niri";
+in {
   # Imports settings based on the machine it is running on
   imports = [
     # Programs to launch at startup
@@ -23,7 +26,7 @@
     ./debug/${machine}.nix
   ];
 
-  config = {
+  config = lib.mkIf cfgCheck {
     # Configure Niri (machine agnostic);
     programs.niri = {
       settings = {
