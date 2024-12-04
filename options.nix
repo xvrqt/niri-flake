@@ -20,12 +20,6 @@ in {
         default = "shaderbg";
       };
 
-      # Select a Window Manager
-      window-manager = lib.mkOption {
-        type = lib.types.enum ["niri"];
-        default = "niri";
-      };
-
       # Where to save screenshots
       screenshot-path = lib.mkOption {
         type = lib.types.path;

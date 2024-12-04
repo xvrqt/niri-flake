@@ -35,15 +35,11 @@
             config,
             ...
           }: {
-            # Annoyingly, Niri requires a NixOS Module to work
             imports = [
+              # Annoyingly, Niri requires a NixOS Module to work
               niri.nixosModules.niri
               ./window-managers/nixosModules/default.nix
             ];
-            # config = lib.mkIf config.programs.niri.enable {
-            #   nixpkgs.overlays = [niri.overlays.niri];
-            #   programs.niri.package = pkgs.niri-stable;
-            # };
           };
         };
       }
@@ -51,18 +47,10 @@
 
     homeManagerModulesWrapped = flake-utils.lib.eachDefaultSystem (
       system: let
-        lib = pkgs.lib;
-        pkgs = import nixpkgs {inherit system;};
       in {
         homeManagerModules = builtins.listToAttrs (builtins.map (machine: {
             name = machine;
-            value = {
-              lib,
-              pkgs,
-              config,
-              niri,
-              ...
-            }: {
+            value = {...}: {
               imports = [
                 # Import the options that help define the desktop experience
                 ./options.nix
@@ -77,7 +65,6 @@
                 # Window Managers #
                 ###################
                 # Niri #
-                # (import ./window-managers/niri/homeManagerModule {inherit lib niri config machine shaderbg;})
                 ./window-managers/homeManagerModules
               ];
             };
