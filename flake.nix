@@ -29,7 +29,7 @@
       in {
         # You need this regardless if you use the Home Manager Module
         nixosModules = {
-          default = {pkgs, ...}: {
+          default = {...}: {
             imports = [
               ###################
               # Window Managers #
