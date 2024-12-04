@@ -56,6 +56,7 @@
               lib,
               pkgs,
               config,
+              niri,
               ...
             }: {
               imports = [
