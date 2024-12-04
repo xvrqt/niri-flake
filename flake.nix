@@ -35,12 +35,11 @@
             config,
             ...
           }: {
+            # Annoyingly, Niri requires a NixOS Module to work
             imports = [
-              # Annoyingly, Niri requires a NixOS Module to work
               niri.nixosModules.niri
-              #(import ./window-managers/nixosModules)
             ];
-            config = {
+            config = lib.mkIf config.programs.niri.enable {
               nixpkgs.overlays = [niri.overlays.niri];
               programs.niri.package = pkgs.niri-stable;
             };
