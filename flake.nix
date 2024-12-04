@@ -29,7 +29,11 @@
       in {
         # You need this regardless if you use the Home Manager Module
         nixosModules = {
-          default = {...}: {
+          default = {
+            lib,
+            config,
+            ...
+          }: {
             imports = [
               ###################
               # Window Managers #
@@ -37,7 +41,7 @@
               # NIRI #
               niri.nixosModules.niri
               (import ./window-managers/niri/nixosModule.nix {
-                inherit pkgs niri;
+                inherit lib config pkgs niri;
               })
               ##############
               # Wallpapers #
