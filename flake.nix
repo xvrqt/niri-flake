@@ -35,26 +35,17 @@
             ...
           }: {
             imports = [
-              ###################
-              # Window Managers #
-              ###################
-              # NIRI #
+              # Annoyingly, Niri requires a NixOS Module to work
               niri.nixosModules.niri
-              # (import ./window-managers/niri/nixosModule.nix {
-              #   inherit lib config pkgs niri;
-              # })
-              ##############
-              # Wallpapers #
-              ##############
+              (import ./window-managers/niri/nixosModule.nix {
+                inherit lib pkgs niri config;
+              })
             ];
           };
         };
       }
     );
 
-    # Home Manager Module is required to declaratively configure Niri
-    # (using the Sodiboo Flake, that is)
-    # We pass in the machine name to retrieve the correct configuration
     homeManagerModulesWrapped = flake-utils.lib.eachDefaultSystem (
       system: let
         lib = pkgs.lib;
@@ -82,9 +73,8 @@
                 # Window Managers #
                 ###################
                 # Niri #
-                # # Include our Home Manager Module which enables and configures Niri
-                #(lib.mkIf (config.desktops.window-manager == "niri") (import ./window-managers/niri/homeManagerModule {inherit lib niri shaderbg config machine;}))
-                (import ./window-managers/niri/homeManagerModule {inherit lib niri shaderbg config machine;})
+                # (import ./window-managers/niri/homeManagerModule {inherit lib niri config machine shaderbg;})
+                ./window-managers/homeManagerModules
               ];
             };
           })

@@ -16,14 +16,14 @@
     environment.variables.NIXOS_OZONE_WL = "1";
 
     # Useful packages to include with a Desktop Environment
-    environment.systemPackages = [
-      pkgs.waypaper
-
-      pkgs.cage
-      pkgs.gamescope
-      pkgs.libsecret
-      pkgs.wl-clipboard
-      pkgs.wayland-utils
-    ];
+    # environment.systemPackages = [
+    #   pkgs.waypaper
+    #
+    #   pkgs.cage
+    #   pkgs.gamescope
+    #   pkgs.libsecret
+    #   pkgs.wl-clipboard
+    #   pkgs.wayland-utils
+    # ];
   };
 }
