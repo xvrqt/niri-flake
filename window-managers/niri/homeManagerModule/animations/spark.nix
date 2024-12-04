@@ -5,8 +5,10 @@
 }: let
   cfgCheck = config.desktops.window-manager == "niri";
 in {
-  programs.niri.settings = lib.mkIf cfgCheck {
-    # Use the default animations
-    animations = {};
+  config = lib.mkIf cfgCheck {
+    programs.niri.settings = {
+      # Use the default animations
+      animations = {};
+    };
   };
 }

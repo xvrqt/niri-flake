@@ -8,12 +8,13 @@
   # We must filter out the "output" field of the attrset to use it in the config
   outputToNiriSubModule = output: (lib.attrsets.filterAttrs (n: _: n != "output") output);
 in {
-  programs.niri.settings.outputs =
-    lib.mkIf cfgCheck
-    (builtins.listToAttrs
+  config = lib.mkIf cfgCheck {
+    programs.niri.settings.outputs =
+      builtins.listToAttrs
       (builtins.map (output: {
           name = output.output;
           value = outputToNiriSubModule output;
         })
-        config.desktops.outputs));
+        config.desktops.outputs);
+  };
 }
