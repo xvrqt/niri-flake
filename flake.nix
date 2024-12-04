@@ -38,7 +38,6 @@
             imports = [
               # Annoyingly, Niri requires a NixOS Module to work
               niri.nixosModules.niri
-              # ./window-managers/nixosModules/default.nix
             ];
             config = lib.mkIf config.programs.niri.enable {
               nixpkgs.overlays = [niri.overlays.niri];
@@ -71,7 +70,7 @@
                 # Window Managers #
                 ###################
                 # Niri #
-                ./window-managers/homeManagerModules
+                ./window-managers
               ];
             };
           })
