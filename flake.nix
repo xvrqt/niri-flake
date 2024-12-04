@@ -72,14 +72,15 @@
                 ##############
                 # SHADERBG #
                 # Import the wallpaper manager NixOS Modules
-                (lib.mkIf (config.desktops.wallpaper == "shaderbg") shaderbg.homeManagerModules.default)
+                shaderbg.homeManagerModules.default
                 # (import ./wallpaper/homeManagerModule.nix {inherit pkgs lib config shaderbg;})
                 ###################
                 # Window Managers #
                 ###################
                 # Niri #
                 # # Include our Home Manager Module which enables and configures Niri
-                (lib.mkIf (config.desktops.window-manager == "niri") (import ./window-managers/niri/homeManagerModule {inherit lib niri shaderbg config machine;}))
+                #(lib.mkIf (config.desktops.window-manager == "niri") (import ./window-managers/niri/homeManagerModule {inherit lib niri shaderbg config machine;}))
+                (import ./window-managers/niri/homeManagerModule {inherit lib niri shaderbg config machine;})
               ];
             };
           })
