@@ -238,11 +238,11 @@
         "shaderbg": "shaderbg_2"
       },
       "locked": {
-        "lastModified": 1732676216,
-        "narHash": "sha256-ILg9r2zAL4ItywnyjB93bVBJMbCFXc6MOVocBXG2spc=",
+        "lastModified": 1733289164,
+        "narHash": "sha256-MlLZndt+8NZ9X4SdzCcOgMkTK8DQlOn+PuBPTvfk81A=",
         "ref": "refs/heads/dev",
-        "rev": "fecaab52664d1ecc9bc29d09ee1fe08473403b1b",
-        "revCount": 35,
+        "rev": "b67b8ce3accb13fce2e730943a85f9650de1a6d5",
+        "revCount": 38,
         "type": "git",
         "url": "file:///home/xvrqt/Development/shaderbg-flake"
       },
@@ -257,15 +257,15 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1732648021,
+        "lastModified": 1732651919,
         "narHash": "sha256-J+fRzSTEMlT9oLVZqbstrDxuKiJTAHNTLxB8IPgdom0=",
-        "owner": "xvrqt",
+        "owner": "Mr-Pine",
         "repo": "shaderbg",
-        "rev": "8a58d9fe343b7d5a13717db7e97a0d5aa77703bf",
+        "rev": "cf9b135069550f8d7c8411d8a53285882034331c",
         "type": "github"
       },
       "original": {
-        "owner": "xvrqt",
+        "owner": "Mr-Pine",
         "repo": "shaderbg",
         "type": "github"
       }

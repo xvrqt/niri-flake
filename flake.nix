@@ -55,21 +55,16 @@
       in {
         homeManagerModules = builtins.listToAttrs (builtins.map (machine: {
             name = machine;
-            value = {...}: {
+            value = {
+              lib,
+              config,
+              ...
+            }: {
               imports = [
                 # Import the options that help define the desktop experience
                 ./options.nix
-                ##############
-                # Wallpapers #
-                ##############
-                # SHADERBG #
-                # Import the wallpaper manager NixOS Modules
-                shaderbg.homeManagerModules.default
-                # (import ./wallpaper/homeManagerModule.nix {inherit pkgs lib config shaderbg;})
-                ###################
-                # Window Managers #
-                ###################
-                # Niri #
+                ./wallpapers
+                # shaderbg.homeManagerModules.default
                 ./window-managers
               ];
             };
@@ -80,6 +75,7 @@
   in {
     # My personal monitor collection; as the layout of this is tightly bound, it's nice to have it on hand
     monitors = import ./monitors.nix;
+    # Am I crazy, or is there a better way
     nixosModules = nixosModulesWrapped.nixosModules;
     homeManagerModules = homeManagerModulesWrapped.homeManagerModules;
   };
