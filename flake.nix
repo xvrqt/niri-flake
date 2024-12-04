@@ -37,7 +37,7 @@
             imports = [
               # Annoyingly, Niri requires a NixOS Module to work
               niri.nixosModules.niri
-              (import ./window-managers/niri/nixosModule.nix {
+              (import ./window-managers/nixosModules {
                 inherit lib pkgs niri config;
               })
             ];
