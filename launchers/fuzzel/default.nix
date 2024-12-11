@@ -6,7 +6,7 @@
 }: let
   cfgCheck = config.desktops.launcher == "fuzzel";
 in {
-  config = lib.mkIf true {
+  config = lib.mkIf cfgCheck {
     programs.fuzzel.settings = {
       enable = true;
       settings = {
