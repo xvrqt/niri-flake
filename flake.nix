@@ -63,8 +63,9 @@
               imports = [
                 # Import the options that help define the desktop experience
                 ./options.nix
+                ./launchers
                 ./wallpapers
-                # shaderbg.homeManagerModules.default
+                shaderbg.homeManagerModules.default
                 ./window-managers
               ];
             };

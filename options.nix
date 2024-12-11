@@ -14,12 +14,6 @@ in {
         default = [monitors.mac-book-pro];
       };
 
-      # Select a Wallpaper Manager
-      wallpaper = lib.mkOption {
-        type = lib.types.enum ["swww" "shaderbg"];
-        default = "shaderbg";
-      };
-
       # Where to save screenshots
       screenshot-path = lib.mkOption {
         type = lib.types.path;
