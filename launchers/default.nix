@@ -1,7 +1,7 @@
 {
   imports = [
     ./options.nix
-    ./wofi
+    #    ./wofi
     ./fuzzel
   ];
 }

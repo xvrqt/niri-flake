@@ -3,7 +3,7 @@
     desktops = {
       # Select a Wallpaper Manager
       launcher = lib.mkOption {
-        type = lib.types.enum ["wofi" "fuzzel"];
+        type = lib.types.enum ["fuzzel"];
         default = "fuzzel";
       };
     };
