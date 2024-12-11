@@ -7,7 +7,7 @@
   cfgCheck = config.desktops.launcher == "fuzzel";
 in {
   config = lib.mkIf cfgCheck {
-    programs.wofi.settings = {
+    programs.fuzzel.settings = {
       enable = true;
       settings = {
         main = {
