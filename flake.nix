@@ -51,13 +51,12 @@
     );
 
     homeManagerModulesWrapped = flake-utils.lib.eachDefaultSystem (
-      system: let
-      in {
+      system: {
         homeManagerModules = builtins.listToAttrs (builtins.map (machine: {
             name = machine;
             value = {
-              lib,
-              config,
+              # lib,
+              # config,
               ...
             }: {
               imports = [

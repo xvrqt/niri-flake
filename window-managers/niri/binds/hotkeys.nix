@@ -4,9 +4,11 @@
   ...
 }: let
   # Use the default terminal
-  wallpaperToggle = "${config.desktops.wallpaper.toggle}/bin/toggleWallpaper";
+  cfg = config.desktops;
+  cfgCheck = cfg.window-manager == "niri";
+  launcher = cfg.launcher.flavor;
   terminal = config.terminal.emulator or "kitty";
-  cfgCheck = config.desktops.window-manager == "niri";
+  wallpaperToggle = "${cfg.wallpaper.toggle}/bin/toggleWallpaper";
 in {
   config = lib.mkIf cfgCheck {
     programs.niri.settings = {
@@ -19,7 +21,7 @@ in {
         "Mod+W".action = spawn "librewolf";
         "Mod+B".action = spawn wallpaperToggle;
         # Open Rofi Application Launcher
-        "Mod+Return".action = sh "rofi -show drun";
+        "Mod+Return".action = spawn launcher;
         # Show Hotkey Cheat Sheet
         "Mod+Shift+Slash".action = show-hotkey-overlay;
         # Power Off Monitors

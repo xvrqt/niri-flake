@@ -1,10 +1,11 @@
 {
   lib,
-  pkgs,
   config,
   ...
 }: let
-  cfgCheck = config.desktops.launcher == "fuzzel";
+  cfg = config.desktops.launcher;
+  cfgCheck = cfg.enable && cfg.flavor == "fuzzel";
+  terminal = config.terminal.emulator or "kitty";
 in {
   config = lib.mkIf cfgCheck {
     programs.fuzzel.settings = {
@@ -12,7 +13,7 @@ in {
       settings = {
         main = {
           # TODO: Make this follow terminal -> emulator
-          terminal = "${pkgs.foot}/bin/foot";
+          terminal = "${terminal}";
           colors = {
             background = "1E1E2EDD";
             text = "CDD6F4FF";
