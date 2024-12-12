@@ -8,7 +8,7 @@
   terminal = config.terminal.emulator or "kitty";
 in {
   config = lib.mkIf cfgCheck {
-    programs.fuzzel.settings = {
+    programs.fuzzel = {
       enable = true;
       settings = {
         main = {
