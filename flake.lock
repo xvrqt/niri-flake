@@ -52,6 +52,24 @@
         "type": "github"
       }
     },
+    "flake-utils_3": {
+      "inputs": {
+        "systems": "systems_3"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "niri": {
       "inputs": {
         "niri-stable": "niri-stable",
@@ -215,15 +233,16 @@
     },
     "shaderbg": {
       "inputs": {
+        "flake-utils": "flake-utils_2",
         "nixpkgs": "nixpkgs_3",
         "shaderbg": "shaderbg_2"
       },
       "locked": {
-        "lastModified": 1734026729,
-        "narHash": "sha256-jrNtZ32KQKFZNetlAttQpcuRj2ifzrbrXexhpqjXubs=",
+        "lastModified": 1734027087,
+        "narHash": "sha256-vgdFiXm5ePn1mXjesJyF5WH62JkRoKWTtgUAuy7VtZs=",
         "ref": "refs/heads/dev",
-        "rev": "cd7699977a5ae469ed24ce09b928732b39e9b813",
-        "revCount": 52,
+        "rev": "70727973b253970def1a02e2e44cbecf17c6e868",
+        "revCount": 54,
         "type": "git",
         "url": "file:///home/xvrqt/Development/shaderbg-flake"
       },
@@ -234,7 +253,7 @@
     },
     "shaderbg_2": {
       "inputs": {
-        "flake-utils": "flake-utils_2",
+        "flake-utils": "flake-utils_3",
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
@@ -316,9 +335,24 @@
         "type": "github"
       }
     },
+    "systems_4": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
     "utils": {
       "inputs": {
-        "systems": "systems_3"
+        "systems": "systems_4"
       },
       "locked": {
         "lastModified": 1731533236,
