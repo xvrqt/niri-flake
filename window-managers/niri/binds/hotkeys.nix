@@ -4,7 +4,7 @@
   ...
 }: let
   # Use the default terminal
-  wallpaperToggle = "${config.desktops.wallpaper.toggle}/bin/shaderbg_toggleWallpaper";
+  wallpaperToggle = "${config.desktops.wallpaper.toggle}/bin/toggleWallpaper";
   terminal = config.terminal.emulator or "kitty";
   cfgCheck = config.desktops.window-manager == "niri";
 in {
