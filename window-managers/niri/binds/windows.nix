@@ -39,15 +39,15 @@ in {
         "Mod+8".action.focus-workspace = 8;
         "Mod+9".action.focus-workspace = 9;
 
-        "Mod+Shift+1".action.focus-monitor = 1;
-        "Mod+Shift+2".action.focus-monitor = 2;
-        "Mod+Shift+3".action.focus-monitor = 3;
-        "Mod+Shift+4".action.focus-monitor = 4;
-        "Mod+Shift+5".action.focus-monitor = 5;
-        "Mod+Shift+6".action.focus-monitor = 6;
-        "Mod+Shift+7".action.focus-monitor = 7;
-        "Mod+Shift+8".action.focus-monitor = 8;
-        "Mod+Shift+9".action.focus-monitor = 9;
+        # "Mod+Shift+1".action.focus-monitor = 1;
+        # "Mod+Shift+2".action.focus-monitor = 2;
+        # "Mod+Shift+3".action.focus-monitor = 3;
+        # "Mod+Shift+4".action.focus-monitor = 4;
+        # "Mod+Shift+5".action.focus-monitor = 5;
+        # "Mod+Shift+6".action.focus-monitor = 6;
+        # "Mod+Shift+7".action.focus-monitor = 7;
+        # "Mod+Shift+8".action.focus-monitor = 8;
+        # "Mod+Shift+9".action.focus-monitor = 9;
 
         # Window Movement ;::; intra-workspace
         "Mod+Ctrl+H".action = move-column-left;
@@ -61,15 +61,15 @@ in {
         # "Mod+Ctrl+Shift+K".action = move-window-up-or-to-monitor-up;
         "Mod+Ctrl+Shift+L".action = move-column-right-or-to-monitor-right;
 
-        "Mod+Ctrl+Shift+1".action.move-column-to-monitor = 1;
-        "Mod+Ctrl+Shift+2".action.move-column-to-monitor = 2;
-        "Mod+Ctrl+Shift+3".action.move-column-to-monitor = 3;
-        "Mod+Ctrl+Shift+4".action.move-column-to-monitor = 4;
-        "Mod+Ctrl+Shift+5".action.move-column-to-monitor = 5;
-        "Mod+Ctrl+Shift+6".action.move-column-to-monitor = 6;
-        "Mod+Ctrl+Shift+7".action.move-column-to-monitor = 7;
-        "Mod+Ctrl+Shift+8".action.move-column-to-monitor = 8;
-        "Mod+Ctrl+Shift+9".action.move-column-to-monitor = 9;
+        # "Mod+Ctrl+Shift+1".action.move-column-to-monitor = 1;
+        # "Mod+Ctrl+Shift+2".action.move-column-to-monitor = 2;
+        # "Mod+Ctrl+Shift+3".action.move-column-to-monitor = 3;
+        # "Mod+Ctrl+Shift+4".action.move-column-to-monitor = 4;
+        # "Mod+Ctrl+Shift+5".action.move-column-to-monitor = 5;
+        # "Mod+Ctrl+Shift+6".action.move-column-to-monitor = 6;
+        # "Mod+Ctrl+Shift+7".action.move-column-to-monitor = 7;
+        # "Mod+Ctrl+Shift+8".action.move-column-to-monitor = 8;
+        # "Mod+Ctrl+Shift+9".action.move-column-to-monitor = 9;
 
         "Mod+Comma".action = consume-window-into-column;
         "Mod+Period".action = expel-window-from-column;
