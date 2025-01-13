@@ -57,8 +57,8 @@ in {
 
         # Window Movement ;::; inter-monitor
         "Mod+Ctrl+Shift+H".action = move-column-left-or-to-monitor-left;
-        "Mod+Ctrl+Shift+J".action = move-window-down-or-to-monitor-down;
-        "Mod+Ctrl+Shift+K".action = move-window-up-or-to-monitor-up;
+        # "Mod+Ctrl+Shift+J".action = move-window-down-or-to-monitor-down;
+        # "Mod+Ctrl+Shift+K".action = move-window-up-or-to-monitor-up;
         "Mod+Ctrl+Shift+L".action = move-column-right-or-to-monitor-right;
 
         "Mod+Ctrl+Shift+1".action.move-column-to-monitor = 1;
