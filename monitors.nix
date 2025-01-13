@@ -20,6 +20,25 @@
     };
   };
 
+  alienware = {
+    output = "HDMI-A-1";
+    mode = {
+      width = 3440;
+      height = 1440;
+      refresh = 59.973;
+    };
+    variable-refresh-rate = false;
+    scale = 1.0;
+    position = {
+      x = -3024;
+      y = 0;
+    };
+    transform = {
+      flipped = false;
+      rotation = 0;
+    };
+  };
+
   # Mac Book Pro Screen
   mac-book-pro = {
     output = "eDP-1";
