@@ -67,7 +67,7 @@
                 ./launchers
                 ./wallpapers
                 shaderbg.homeManagerModules.default
-                ./window-managers
+                (import ./window-managers {inherit machine;})
               ];
             };
           })
