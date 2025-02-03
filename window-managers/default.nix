@@ -1,6 +1,11 @@
 {
+  config,
+  machine,
+  lib,
+  ...
+}: {
   imports = [
     ./options.nix
-    ./niri
+    (import ./niri {inherit lib config machine;})
   ];
 }
