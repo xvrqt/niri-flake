@@ -57,8 +57,9 @@
             inherit machine system;
             name = machine;
             value = {
-              # lib,
-              # config,
+              lib,
+              config,
+              machine,
               ...
             }: {
               imports = [
@@ -67,7 +68,7 @@
                 ./launchers
                 ./wallpapers
                 shaderbg.homeManagerModules.default
-                (import ./window-managers {inherit machine;})
+                ./window-managers
               ];
             };
           })
